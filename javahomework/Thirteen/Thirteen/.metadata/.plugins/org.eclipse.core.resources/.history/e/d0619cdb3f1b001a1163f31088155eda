@@ -1,7 +1,0 @@
-package Exercise13_1;
-
-public class Test {
-	public static void main(String[] args) {
-		Trangle t = new Trangle(color, filled, edg1, edg2, edg3)
-	}
-}

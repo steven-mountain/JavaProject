@@ -1,6 +1,0 @@
-String s = "haha";
-
-1、s.soutv  System.out.println("s = " + s);
-2、str  String
-3、s.souf  System.out.printf("", s);
-4、s.err  System.err.println();

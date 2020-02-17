@@ -1,7 +1,0 @@
-INDEX VERSION 1.131+D:\javahomework\HugeHomework\src\.metadata\.plugins\org.eclipse.jdt.core
-59115922.index
-1540556293.index
-2962699546.index
-2984517695.index
-3435007717.index
-1574481910.index
