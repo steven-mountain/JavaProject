@@ -1,0 +1,48 @@
+package Alarm;
+
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Scanner;
+import java.util.GregorianCalendar;
+
+public class AlarmTest {
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String event = sc.next();
+		int year = sc.nextInt();
+		int month = sc.nextInt();
+		int day = sc.nextInt();
+		int hour = sc.nextInt();
+		int minute = sc.nextInt();
+		int second = sc.nextInt();
+		
+		
+		Custom c = new Custom(event, year, month, day, hour,minute,second);
+		//Custom c = new Custom();
+		c.setTimeOfAlarm();
+		//System.out.println(c.c.getTime());
+		
+		//Calendar ct = new GregorianCalendar(year, month, day, hour, minute, second);
+		//System.out.println(ct.getTime());
+		
+		Calendar temp = Calendar.getInstance();
+		new Thread(()->{
+			try {
+				Thread.sleep(c.c.getTimeInMillis() - temp.getTimeInMillis());
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+			}
+		}).start();
+		
+		System.out.println(temp.getTimeInMillis());
+		//Calendar temp = Calendar.getInstance();
+		//System.out.println(temp.getTime());
+		System.out.println(c.getEvent());
+		System.out.println(c.c.getTimeInMillis());
+		System.out.println(c.c.getTimeInMillis() - temp.getTimeInMillis());
+	}
+}
+

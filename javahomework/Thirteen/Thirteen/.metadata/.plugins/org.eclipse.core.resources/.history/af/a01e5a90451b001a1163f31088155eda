@@ -1,0 +1,13 @@
+package Exercise13_4;
+
+import java.time.DayOfWeek;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class Test {
+	public static void main(String[] args) {
+		GregorianCalendar g = new GregorianCalendar();
+		System.out.println(g.get(Calendar.YEAR) + 1);
+	}
+	
+}

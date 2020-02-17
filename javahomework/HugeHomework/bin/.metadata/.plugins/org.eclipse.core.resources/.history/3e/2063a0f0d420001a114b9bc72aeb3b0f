@@ -1,0 +1,73 @@
+package Temp;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class MainTwo {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		int tempNum = 0;
+		int index = 0;
+		double current = 0;
+//	ArrayList<Person> array = new ArrayList<Person>(number);
+		ArrayList<Person> array = new ArrayList<Person>(number);
+		for(int i = 0; i < number; ++i){
+			array.add(new Person(i + 1));
+		}
+		
+		for(int i = 0; i < number; ++i){
+			tempNum = sc.nextInt();
+			array.get(i).numOfH += tempNum;
+			for(int j = 0; j < tempNum; ++j){
+				index = sc.nextInt();
+				current = sc.nextDouble();
+				array.get(index - 1).money += current;
+				array.get(i).money -= current;
+//				num[index - 1] += current;
+//				num[i] -= current;
+			}
+		}
+		
+		for(int i = 0; i < number - 1; ++i) {
+			for(int j = 0; j < number - i - 1; ++j) {
+				if(array.get(j).money < array.get(j + 1).money) {
+					Person temp = array.get(j + 1);
+					array.set(j + 1, array.get(j));
+					array.set(j, temp);
+				}
+				else if(array.get(j).numOfH > array.get(j + 1).numOfH) {
+					Person temp = array.get(j + 1);
+					array.set(j + 1, array.get(j));
+					array.set(j, temp);
+				}else if(array.get(j).num < array.get(j + 1).num) {
+					Person temp = array.get(j + 1);
+					array.set(j + 1, array.get(j));
+					array.set(j, temp);
+				}
+			}
+		}
+		
+		for(Person p : array) {
+			System.out.println(p.num + "  " + p.money);
+		}
+		
+		sc.close();
+	}
+}
+
+class Person{
+	public int num = 0;
+	public double money = 0;
+	public int numOfH = 0;
+	
+	public Person(int num) {
+		super();
+		this.num = num;
+	}
+
+	public Person() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+}

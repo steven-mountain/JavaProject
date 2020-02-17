@@ -1,0 +1,10 @@
+package Exercise13_1;
+
+import java.util.Date;
+
+public abstract class GeometricObject {
+	private String color = "white";
+	private boolean filled;
+	private Date dateCreated;
+	
+}

@@ -1,0 +1,31 @@
+package Test;
+
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeMap;
+
+public class Test {
+	@SuppressWarnings("unlikely-arg-type")
+	public static void main(String[] args) {
+		TreeMap<String, Integer> map = new TreeMap<String, Integer>();
+		String temp = "hahahah";
+		String[] s = temp.split(temp);
+//		for(String x : s) {
+//			System.out.println(x);
+//		}
+//		System.out.println(s.length);
+//		System.out.println(temp.length());
+		for(String x : s) {
+			if(!map.containsKey(x)) {
+				map.put(x, 1);
+			}else {
+				map.put(x, map.get(x) + 1);
+			}
+		}
+		
+		Set<Map.Entry<String, Integer>> set = map.entrySet();
+		for(Map.Entry<String, Integer> mp : set) {
+			System.out.println(mp.getKey() + " (" + mp.getValue() + ")");
+		}
+	}
+}
